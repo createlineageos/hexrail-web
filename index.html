@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hexrail OS - Mobile CLI</title>
+<style>
+  /* Material 3 inspired colors & typography */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  :root {
+    --md-sys-color-primary: #6750a4;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-secondary: #625b71;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-background: #fef7ff;
+    --md-sys-color-surface: #ffffff;
+    --md-sys-color-on-surface: #1c1b1f;
+    --md-sys-color-outline: #79747e;
+    --md-sys-shape-radius: 12px;
+    --md-sys-shadow-elevation-1: 0px 1px 3px rgba(0,0,0,0.12);
+    --md-sys-shadow-elevation-2: 0px 2px 6px rgba(0,0,0,0.16);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-surface);
+    margin: 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    text-align: center;
+    padding: 24px 16px 12px;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-radius: var(--md-sys-shape-radius);
+    box-shadow: var(--md-sys-shadow-elevation-2);
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.25rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  nav {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  nav a {
+    color: var(--md-sys-color-on-primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: var(--md-sys-shape-radius);
+    transition: background-color 0.3s ease;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    background-color: var(--md-sys-color-secondary);
+    outline: none;
+  }
+
+  main {
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 24px auto;
+    background-color: var(--md-sys-color-surface);
+    border-radius: var(--md-sys-shape-radius);
+    box-shadow: var(--md-sys-shadow-elevation-1);
+    padding: 24px 32px;
+  }
+
+  section {
+    margin-bottom: 32px;
+  }
+
+  section h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--md-sys-color-primary);
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--md-sys-color-on-surface);
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  ul li {
+    background: var(--md-sys-color-background);
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    border-radius: var(--md-sys-shape-radius);
+    box-shadow: var(--md-sys-shadow-elevation-1);
+    font-weight: 500;
+    color: var(--md-sys-color-secondary);
+  }
+
+  a.button {
+    display: inline-block;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: var(--md-sys-shape-radius);
+    font-size: 1.1rem;
+    box-shadow: var(--md-sys-shadow-elevation-2);
+    transition: background-color 0.3s ease;
+  }
+
+  a.button:hover,
+  a.button:focus-visible {
+    background-color: #543d99;
+    outline: none;
+  }
+
+  footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 0.9rem;
+    color: var(--md-sys-color-secondary);
+  }
+
+  @media (max-width: 480px) {
+    main {
+      margin: 16px;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 1.75rem;
+    }
+    nav {
+      gap: 12px;
+    }
+    nav a {
+      font-size: 1rem;
+      padding: 8px 12px;
+    }
+    section h2 {
+      font-size: 1.3rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>HEXRAIL OS</h1>
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#download">DOWNLOAD</a>
+      <a href="#features">FEATURES</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About Hexrail</h2>
+      <p>Hexrail is a CLI-focused mobile OS designed for simplicity and lightweight operation on handheld devices.</p>
+    </section>
+    <section id="download">
+      <h2>Download</h2>
+      <p>Grab the latest version from the official source.</p>
+      <a href="https://github.com/createlineageos1/hexrail" class="button" target="_blank" rel="noopener noreferrer">Download Hexrail</a>
+    </section>
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Minimalistic command-line interface for efficient mobile use</li>
+        <li>Lightweight and fast boot times</li>
+        <li>Open-source</li>
+        <li>Customizable shell environment</li>
+        <li>Secure and privacy-focused design</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Hexrail Project. All rights reserved.
+  </footer>
+</body>
+</html>
